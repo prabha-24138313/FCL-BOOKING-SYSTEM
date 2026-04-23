@@ -1,4 +1,7 @@
 package model;
 
-public class TimeSlot {
+public enum TimeSlot {
+    MORNING,
+    AFTERNOON,
+    EVENING
 }
