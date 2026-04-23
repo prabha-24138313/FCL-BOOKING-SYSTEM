@@ -1,6 +1,7 @@
 package model;
 
 import java.util.*;
+import model.Lesson;
 
 /**
  * Represents a member in the FLC Booking System.
@@ -88,31 +89,33 @@ public class Member {
      * @param rating the rating value (1-5)
      * @throws IllegalArgumentException if lesson is null or rating is invalid
      */
-    public void reviewLesson(Lesson lesson, int rating) {
+   /* public void reviewLesson(Lesson lesson, int rating) {
         reviewLesson(lesson, rating, "Good session");
-    }
+    }**/
 
     /**
      * Adds a review for a lesson with a custom comment.
      *
      * @param lesson  the lesson to review (must not be null)
      * @param rating  the rating value (1-5)
-     * @param comment the comment text
+     *  the comment text
      * @throws IllegalArgumentException if lesson is null or rating is invalid
      */
-    public void reviewLesson(Lesson lesson, int rating, String comment) {
+    /* public void reviewLesson(String lesson,  int rating ) {
         // Validate input
         if (lesson == null) {
             throw new IllegalArgumentException("Lesson cannot be null");
         }
         if (rating < 1 || rating > 5) {
             throw new IllegalArgumentException("Rating must be between 1 and 5");
-        }
+
 
         // Create and add the review
-        Review review = new Review(this, rating, comment);
+        Review review = new Review(this, rating);
         lesson.addReview(review);
-    }
+
+
+    }**/
 
     /**
      * Gets the name of this member.

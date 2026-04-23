@@ -2,6 +2,7 @@ package model;
 
 import java.util.*;
 
+
 /**
  * Represents a fitness lesson in the FLC Booking System.
  *
@@ -32,7 +33,7 @@ public class Lesson {
     private List<Member> members = new ArrayList<>();
 
     /** List of reviews for this lesson */
-    private List<Review> reviews = new ArrayList<>();
+    //private List<Review> reviews = new ArrayList<>();
 
     /**
      * Creates a new Lesson with the given details.
@@ -94,14 +95,14 @@ public class Lesson {
      * @param review the review to add (must not be null)
      * @throws IllegalArgumentException if review is null
      */
-    public void addReview(Review review) {
+   /* public void addReview(Review review) {
         // Validate input
         if (review == null) {
             throw new IllegalArgumentException("Review cannot be null");
         }
 
         reviews.add(review);
-    }
+    }**/
 
     /**
      * Gets the current number of members booked for this lesson.
@@ -153,11 +154,13 @@ public class Lesson {
      *
      * @return the average rating (0.0 if no reviews), or 0 if no reviews exist
      */
-    public double getAverageRating() {
+   /* public double getAverageRating() {
         // Handle empty reviews list
+
         if (reviews.isEmpty()) {
             return 0.0;
         }
+
 
         int sum = 0;
 
@@ -166,7 +169,7 @@ public class Lesson {
         }
 
         return (double) sum / reviews.size();
-    }
+    }**/
 
     /**
      * Gets the capacity of this lesson.
@@ -200,8 +203,8 @@ public class Lesson {
      *
      * @return the list of reviews
      */
-    public List<Review> getReviews() {
+   /* public List<Review> getReviews() {
         return Collections.unmodifiableList(reviews);
-    }
+    }**/
 }
 

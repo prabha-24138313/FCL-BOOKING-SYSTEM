@@ -1,7 +1,7 @@
 package main;
 
 import model.*;
-import service.Timetable;
+import model.Timetable;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -188,11 +188,11 @@ public class FLCGUI extends JFrame {
         //Review panel
         JPanel reviewPanal = new JPanel(new FlowLayout(FlowLayout.LEFT));
       reviewPanal.setBorder(BorderFactory.createTitledBorder("Give a Review"));
-        memberComboBox = new JComboBox<>(members.toArray(new Member[0]));
+        exerciseComboBox = new JComboBox<>(new String[]{ "Yoga", "Zumba", "Aquacise", "Box Fit"});
         reviewComboBox = new JComboBox<>(new String[]{"1:Very dissatisfied","2:Dissatisfied","3:OK","4:Satisfied","5:very Satisfied"});
         JButton reviewBtn = new JButton("Review");
-        reviewBtn.addActionListener(e -> searchByExercise());
-        reviewPanal.add(memberComboBox);
+        reviewBtn.addActionListener(e -> plaveReview());
+        reviewPanal.add(exerciseComboBox);
         reviewPanal.add(reviewComboBox);
        reviewPanal.add(reviewBtn);
         leftPanel.add(reviewPanal);
@@ -310,7 +310,7 @@ public class FLCGUI extends JFrame {
                     l.getTimeSlot(),
                     l.getMemberCount() + "/" + l.getCapacity(),
                     "£" + l.getExercise().getPrice(),
-                    String.format("%.1f", l.getAverageRating())
+                   /* String.format("%.1f", l.getAverageRating())*/
             };
             lessonTableModel.addRow(row);
         }
@@ -338,6 +338,25 @@ public class FLCGUI extends JFrame {
             outputArea.setText("Error: " + e.getMessage());
         } catch (Exception e) {
             outputArea.setText("An unexpected error occurred: " + e.getMessage());
+        }
+    }
+    //for review and rating
+    private void plaveReview(){
+        try {
+            String selectedRating = (String) reviewComboBox.getSelectedItem();
+            String selectedLesson = (String) exerciseComboBox.getSelectedItem();
+
+            System.out.println("Selected : " + selectedLesson + " Selected:" + selectedRating);
+
+
+            /*exerciseComboBox = new JComboBox<>(new String[]{ "Yoga", "Zumba", "Aquacise", "Box Fit"});
+            reviewComboBox = new JComboBox<>(new String[]{"1:Very dissatisfied","2:Dissatisfied","3:OK","4:Satisfied","5:very Satisfied"});**/
+           outputArea.setText("REVIEW HAS BEEN ADDED "+"\n"
+                + "Lesson:"+selectedLesson +"\n"+ " Rating:" + selectedRating);
+            outputArea.setForeground(Color.darkGray);
+        }
+        catch (IllegalArgumentException e) {
+            outputArea.setText("Error: " + e.getMessage());
         }
     }
 
@@ -457,7 +476,7 @@ public class FLCGUI extends JFrame {
                             .append(" | ").append(l.getTimeSlot())
                             .append(" | Members: ").append(l.getMemberCount())
                             .append("/").append(l.getCapacity())
-                            .append(" | Avg Rating: ").append(String.format("%.2f", l.getAverageRating()))
+                            /*.append(" | Avg Rating: ").append(String.format("%.2f", l.getAverageRating()))**/
                             .append("\n");
                 }
             }

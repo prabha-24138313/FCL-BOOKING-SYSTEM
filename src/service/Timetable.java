@@ -88,7 +88,7 @@ public class Timetable {
      * Prints a report of all lessons showing details including
      * exercise name, day, time slot, member count, and average rating.
      */
-    public void printLessonReport() {
+    /*public void printLessonReport() {
         // Handle empty timetable
         if (lessons.isEmpty()) {
             System.out.println("\nNo lessons in the timetable.");
@@ -112,7 +112,7 @@ public class Timetable {
             );
         }
     }
-
+**/
     /**
      * Prints an income report showing total income per exercise type
      * and identifies the highest earning exercise.

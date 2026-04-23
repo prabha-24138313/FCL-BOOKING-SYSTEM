@@ -1,7 +1,7 @@
 package main;
 
 import model.*;
-import service.Timetable;
+import model.Timetable;
 import java.util.*;
 
 public class Main {
@@ -63,10 +63,10 @@ public class Main {
 
             int rating = rand.nextInt(5)+1;
 
-            m.reviewLesson(l,rating,"Good session");
+           // m.reviewLesson(l,rating,"Good session");
         }
 
-        timetable.printLessonReport();
-        timetable.printIncomeReport();
+       // timetable.printLessonReport();
+        //timetable.printIncomeReport();
     }
 }
