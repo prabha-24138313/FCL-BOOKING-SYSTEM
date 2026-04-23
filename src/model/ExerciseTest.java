@@ -3,7 +3,7 @@ package model;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-import model.Exercise;
+
 class ExerciseTest {
    Exercise yoga = new Exercise("Yoga", 10);
     @Test
