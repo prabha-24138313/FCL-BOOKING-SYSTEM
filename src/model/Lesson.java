@@ -6,11 +6,10 @@ import java.util.*;
 /**
  * Represents a fitness lesson in the FLC Booking System.
  *
- * <p>A Lesson has an associated exercise, scheduled day, time slot,
- * and can hold up to 4 members. Each lesson can receive reviews from members.</p>
+ * A Lesson has an associated exercise, scheduled day, time slot,
+ * and can hold up to 4 members. Each lesson can receive reviews from members.
  *
- * @author FLC Booking System
- * @version 1.0
+
  */
 public class Lesson {
 
@@ -33,7 +32,7 @@ public class Lesson {
     private List<Member> members = new ArrayList<>();
 
     /** List of reviews for this lesson */
-    //private List<Review> reviews = new ArrayList<>();
+
 
     /**
      * Creates a new Lesson with the given details.
@@ -89,20 +88,7 @@ public class Lesson {
         return true;
     }
 
-    /**
-     * Adds a review to this lesson.
-     *
-     * @param review the review to add (must not be null)
-     * @throws IllegalArgumentException if review is null
-     */
-   /* public void addReview(Review review) {
-        // Validate input
-        if (review == null) {
-            throw new IllegalArgumentException("Review cannot be null");
-        }
 
-        reviews.add(review);
-    }**/
 
     /**
      * Gets the current number of members booked for this lesson.
@@ -149,27 +135,7 @@ public class Lesson {
         return id;
     }
 
-    /**
-     * Calculates the average rating from all reviews for this lesson.
-     *
-     * @return the average rating (0.0 if no reviews), or 0 if no reviews exist
-     */
-   /* public double getAverageRating() {
-        // Handle empty reviews list
 
-        if (reviews.isEmpty()) {
-            return 0.0;
-        }
-
-
-        int sum = 0;
-
-        for (Review r : reviews) {
-            sum += r.getRating();
-        }
-
-        return (double) sum / reviews.size();
-    }**/
 
     /**
      * Gets the capacity of this lesson.
@@ -198,13 +164,6 @@ public class Lesson {
         return Collections.unmodifiableList(members);
     }
 
-    /**
-     * Gets an unmodifiable list of reviews for this lesson.
-     *
-     * @return the list of reviews
-     */
-   /* public List<Review> getReviews() {
-        return Collections.unmodifiableList(reviews);
-    }**/
+
 }
 

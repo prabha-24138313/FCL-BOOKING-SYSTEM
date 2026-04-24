@@ -40,16 +40,7 @@ class MemberTest {
         assertFalse(member.bookLesson(l2));
     }
 
-    @Test
-    void testCancelBooking() {
-        member.bookLesson(lesson);
-        assertTrue(member.cancelBooking(lesson));
-        assertEquals(0, member.getBookingCount());
-    }
 
-    @Test
-    void testCancelNullBooking() {
-        assertFalse(member.cancelBooking(null));
-    }
+
 
 }

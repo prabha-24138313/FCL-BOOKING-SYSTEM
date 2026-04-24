@@ -61,12 +61,9 @@ public class Main {
             Member m = members.get(rand.nextInt(10));
             Lesson l = timetable.getLessons().get(rand.nextInt(48));
 
-            int rating = rand.nextInt(5)+1;
 
-           // m.reviewLesson(l,rating,"Good session");
         }
 
-       // timetable.printLessonReport();
-        //timetable.printIncomeReport();
+
     }
 }

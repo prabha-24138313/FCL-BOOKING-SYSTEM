@@ -6,11 +6,10 @@ import model.Lesson;
 /**
  * Represents a member in the FLC Booking System.
  *
- * <p>A Member can book lessons and leave reviews for lessons they have attended.
- * Members cannot book multiple lessons at the same time slot on the same day.</p>
+
+ * Members cannot book multiple lessons at the same time slot on the same day.
  *
- * @author FLC Booking System
- * @version 1.0
+
  */
 public class Member {
 
@@ -46,15 +45,7 @@ public class Member {
 
     /**
      * Books a lesson for this member.
-     *
-     * <p>Booking fails if:
-     * <ul>
-     *   <li>The lesson is null</li>
-     *   <li>The member already has a booking at the same day and time</li>
-     *   <li>The lesson is already at full capacity</li>
-     * </ul>
-     * </p>
-     *
+
      * @param lesson the lesson to book (must not be null)
      * @return true if booking was successful, false otherwise
      * @throws IllegalArgumentException if lesson is null
@@ -82,40 +73,9 @@ public class Member {
         return false;
     }
 
-    /**
-     * Adds a review for a lesson with a default comment.
-     *
-     * @param lesson the lesson to review (must not be null)
-     * @param rating the rating value (1-5)
-     * @throws IllegalArgumentException if lesson is null or rating is invalid
-     */
-   /* public void reviewLesson(Lesson lesson, int rating) {
-        reviewLesson(lesson, rating, "Good session");
-    }**/
-
-    /**
-     * Adds a review for a lesson with a custom comment.
-     *
-     * @param lesson  the lesson to review (must not be null)
-     * @param rating  the rating value (1-5)
-     *  the comment text
-     * @throws IllegalArgumentException if lesson is null or rating is invalid
-     */
-    /* public void reviewLesson(String lesson,  int rating ) {
-        // Validate input
-        if (lesson == null) {
-            throw new IllegalArgumentException("Lesson cannot be null");
-        }
-        if (rating < 1 || rating > 5) {
-            throw new IllegalArgumentException("Rating must be between 1 and 5");
 
 
-        // Create and add the review
-        Review review = new Review(this, rating);
-        lesson.addReview(review);
 
-
-    }**/
 
     /**
      * Gets the name of this member.

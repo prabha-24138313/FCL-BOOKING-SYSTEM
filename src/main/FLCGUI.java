@@ -74,9 +74,9 @@ public class FLCGUI extends JFrame {
 
     /**
      * Initializes the system with sample data:
-     * - Creates 4 exercise types
-     * - Creates 48 lessons (8 weeks x 6 lessons per week)
-     * - Creates 10 sample members
+     * Creates 4 exercise types
+     * Creates 48 lessons (8 weeks x 6 lessons per week)
+     * Creates 10 sample members
      */
     private void initializeData() {
         try {
@@ -289,8 +289,8 @@ public class FLCGUI extends JFrame {
 
     /**
      * Refreshes the lesson table with the given list of lessons.
-     *
-     * @param lessons the list of lessons to display
+
+     *  the list of lessons to display
      */
     private void refreshLessonTable(List<Lesson> lessons) {
         // Clear existing rows
@@ -528,8 +528,8 @@ public class FLCGUI extends JFrame {
 
     /**
      * Main entry point for the GUI application.
-     *
-     * @param args command line arguments (not used)
+
+     * command line arguments (not used)
      */
     public static void main(String[] args) {
         // Run the GUI on the Event Dispatch Thread
