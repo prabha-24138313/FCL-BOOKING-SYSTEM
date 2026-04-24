@@ -28,7 +28,7 @@ public class Timetable {
     public List<Lesson> searchByExercise(String name){
 
         List<Lesson> result = new ArrayList<>();
-
+System.out.println(name);
         for(Lesson l: lessons)
             if(l.getExercise().getName().equalsIgnoreCase(name))
                 result.add(l);

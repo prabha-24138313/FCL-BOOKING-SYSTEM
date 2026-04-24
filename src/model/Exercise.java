@@ -41,6 +41,7 @@ public class Exercise {
      */
     public String getName() {
         return name;
+
     }
 
     /**

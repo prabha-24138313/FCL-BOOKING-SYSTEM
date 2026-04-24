@@ -48,6 +48,7 @@ public class FLCGUI extends JFrame {
 
     /** Dropdown for exercise selection */
     private JComboBox<String> exerciseComboBox;
+    private JComboBox<String> rExerciseComboBox;
 
     private JComboBox<String> reviewComboBox;
 
@@ -188,11 +189,11 @@ public class FLCGUI extends JFrame {
         //Review panel
         JPanel reviewPanal = new JPanel(new FlowLayout(FlowLayout.LEFT));
       reviewPanal.setBorder(BorderFactory.createTitledBorder("Give a Review"));
-        exerciseComboBox = new JComboBox<>(new String[]{ "Yoga", "Zumba", "Aquacise", "Box Fit"});
+        rExerciseComboBox = new JComboBox<>(new String[]{ "Yoga", "Zumba", "Aquacise", "Box Fit"});
         reviewComboBox = new JComboBox<>(new String[]{"1:Very dissatisfied","2:Dissatisfied","3:OK","4:Satisfied","5:very Satisfied"});
         JButton reviewBtn = new JButton("Review");
         reviewBtn.addActionListener(e -> plaveReview());
-        reviewPanal.add(exerciseComboBox);
+        reviewPanal.add(rExerciseComboBox);
         reviewPanal.add(reviewComboBox);
        reviewPanal.add(reviewBtn);
         leftPanel.add(reviewPanal);
@@ -344,7 +345,7 @@ public class FLCGUI extends JFrame {
     private void plaveReview(){
         try {
             String selectedRating = (String) reviewComboBox.getSelectedItem();
-            String selectedLesson = (String) exerciseComboBox.getSelectedItem();
+            String selectedLesson = (String) rExerciseComboBox.getSelectedItem();
 
             System.out.println("Selected : " + selectedLesson + " Selected:" + selectedRating);
 
@@ -365,17 +366,17 @@ public class FLCGUI extends JFrame {
      */
     private void searchByExercise() {
         try {
-            String selected = (String) exerciseComboBox.getSelectedItem();
+            String selectedLesson = (String) exerciseComboBox.getSelectedItem();
             List<Lesson> results;
-
-            if (selected == null || selected.equals("All")) {
+System.out.println(selectedLesson);
+            if (selectedLesson == null || selectedLesson.equals("All")) {
                 results = timetable.getLessons();
             } else {
-                results = timetable.searchByExercise(selected);
+                results = timetable.searchByExercise(selectedLesson);
             }
 
             refreshLessonTable(results);
-            outputArea.setText("Found " + results.size() + " lesson(s) for " + selected);
+            outputArea.setText("Found " + results.size() + " lesson(s) for " + selectedLesson);
         } catch (IllegalArgumentException e) {
             outputArea.setText("Error: " + e.getMessage());
         } catch (Exception e) {
